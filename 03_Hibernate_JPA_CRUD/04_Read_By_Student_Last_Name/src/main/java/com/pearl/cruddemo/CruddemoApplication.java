@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class CruddemoApplication {
 
@@ -20,10 +22,65 @@ public class CruddemoApplication {
 		return runner -> {
 			//createStudent(studentDAO);
 
-			createMultipleStudents(studentDAO);
+			//createMultipleStudents(studentDAO);
+
+			//readStudent(studentDAO);
+
+			//QuaryForStudents(studentDAO);
+
+			QuaryForStudentsByLastName(studentDAO);
 		};
 	}
 
+	private void QuaryForStudentsByLastName(StudentDAO studentDAO) {
+
+		//get a list of students
+		List<Student> theStudents = studentDAO.findByLastName("Jayasinghe");
+
+		//display list of students
+		for(Student tempStudent: theStudents){
+			System.out.println(tempStudent);
+		}
+	}
+
+	/*
+	private void QuaryForStudents(StudentDAO studentDAO) {
+
+		//get a list of students
+		List<Student> theStudents = studentDAO.findAll();
+
+		//display list of students
+		for(Student tempStudent: theStudents){
+			System.out.println(tempStudent);
+		}
+	}
+	*/
+
+	/*
+	private void readStudent(StudentDAO studentDAO) {
+
+		// create the student object
+		System.out.println("Creating new student object...");
+		Student tempStudent = new Student("kamindu", "vidanarachchi", "yasiru@gmnail.com");
+
+		// save the student object
+		System.out.println("Saving the student...");
+		studentDAO.save(tempStudent);
+
+		// display id of the saved student
+		int theId = tempStudent.getId();
+		System.out.println("Saved student. Generated is:" + theId);
+
+		//retrieve student based on the id: primary key
+		System.out.println("Retrieving student with id: " + theId);
+		Student myStudent = studentDAO.findById(theId);
+
+		//display student
+		System.out.println("Found the student: " + myStudent);
+	}
+	*/
+
+	/*
 	private void createMultipleStudents(StudentDAO studentDAO) {
 
 		//create multiple students
@@ -39,7 +96,10 @@ public class CruddemoApplication {
 		studentDAO.save(tempStudent3);
 
 	}
+	*/
 
+
+	/*
 	private void createStudent(StudentDAO studentDAO) {
 
 		// create the student object
@@ -53,5 +113,6 @@ public class CruddemoApplication {
 		// display id of the save student
 		System.out.println("Saved student. Generated id: " + tempStudent.getId());
 	}
+	*/
 
 }
