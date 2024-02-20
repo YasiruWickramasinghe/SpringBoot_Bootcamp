@@ -1,7 +1,5 @@
 package com.pearl.springcoredemo.common;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
 @Component
