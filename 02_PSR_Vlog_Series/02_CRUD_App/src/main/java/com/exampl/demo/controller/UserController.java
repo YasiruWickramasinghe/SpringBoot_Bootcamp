@@ -20,6 +20,12 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    //get User by ID API
+    @GetMapping("/getUser/{userId}")
+    public UserDTO getUserById(@PathVariable Integer userId){
+        return userService.getUserById(userId);
+    }
+
     //createUser API
     @PostMapping("/addUser")
     public UserDTO saveUser(@RequestBody UserDTO userDTO){
@@ -32,9 +38,15 @@ public class UserController {
         return  userService.updateUser(userDTO);
     }
 
-    //deleteUser API - using catch userId in request parameter
-    @DeleteMapping("/deleteUser")
-    public String deleteUser(@RequestBody UserDTO userDTO){
-        return  userService.deleteUser(userDTO);
+    //01 - deleteUser API - using catch userId in request body
+//    @DeleteMapping("/deleteUser")
+//    public String deleteUser(@RequestBody UserDTO userDTO){
+//        return  userService.deleteUser(userDTO);
+//    }
+
+    //02 - deleteUser API - using catch userId in browser url
+    @DeleteMapping("/deleteUser/{userId}")
+    public String deleteUser(@PathVariable Integer userId){
+        return  userService.deleteUser(userId);
     }
 }
