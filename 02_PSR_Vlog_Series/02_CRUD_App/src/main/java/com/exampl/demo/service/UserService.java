@@ -16,7 +16,7 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserRepo userRepo;
-    @Autowired
+     @Autowired
     private ModelMapper modelMapper;
 
     //Get All Users
@@ -24,5 +24,29 @@ public class UserService {
         List<User>userList = userRepo.findAll();
         return modelMapper.map(userList, new TypeToken<List<UserDTO>>(){}.getType());
     }
+
+    //Create User
+    public UserDTO saveUser(UserDTO userDTO){
+        userRepo.save(modelMapper.map(userDTO, User.class));
+        return userDTO;
+    }
+
+    //Update Existing User if not existing add new entry
+    public UserDTO updateUser(UserDTO userDTO){
+        userRepo.save(modelMapper.map(userDTO, User.class));
+        return userDTO;
+    }
+
+    // 01) Delete User - catch the id in request body and delete the record
+    public String deleteUser(UserDTO userDTO){
+        userRepo.delete(modelMapper.map(userDTO, User.class));
+        return "User Record Deleted";
+    }
+
+    // 02) Delete User - catch the id in browser url and delete the record
+//    public String deleteUser(UserDTO userDTO){
+//        userRepo.delete(modelMapper.map(userDTO, User.class));
+//        return "User Record Deleted";
+//    }
 
 }
