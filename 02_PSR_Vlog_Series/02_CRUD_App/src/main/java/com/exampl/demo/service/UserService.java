@@ -25,6 +25,12 @@ public class UserService {
         return modelMapper.map(userList, new TypeToken<List<UserDTO>>(){}.getType());
     }
 
+    //Get User By ID
+    public UserDTO getUserById(Integer userId){
+        User user = userRepo.getUserById(userId);
+        return modelMapper.map(user, UserDTO.class);
+    }
+
     //Create User
     public UserDTO saveUser(UserDTO userDTO){
         userRepo.save(modelMapper.map(userDTO, User.class));
@@ -38,15 +44,15 @@ public class UserService {
     }
 
     // 01) Delete User - catch the id in request body and delete the record
-    public String deleteUser(UserDTO userDTO){
-        userRepo.delete(modelMapper.map(userDTO, User.class));
-        return "User Record Deleted";
-    }
-
-    // 02) Delete User - catch the id in browser url and delete the record
 //    public String deleteUser(UserDTO userDTO){
 //        userRepo.delete(modelMapper.map(userDTO, User.class));
 //        return "User Record Deleted";
 //    }
+
+    // 02) Delete User - catch the id in browser url and delete the record
+    public String deleteUser(Integer userId){
+        userRepo.deleteById(userId);
+        return "User Record Deleted";
+    }
 
 }
