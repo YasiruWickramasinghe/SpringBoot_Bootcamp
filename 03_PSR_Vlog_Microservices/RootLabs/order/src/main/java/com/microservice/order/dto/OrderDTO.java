@@ -12,4 +12,5 @@ public class OrderDTO {
     private int itemId;
     private String orderDate;
     private int amount;
+
 }

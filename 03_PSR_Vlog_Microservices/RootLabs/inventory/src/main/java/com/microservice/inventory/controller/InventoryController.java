@@ -19,6 +19,7 @@ public class InventoryController {
         return inventoryService.getAllItems();
     }
 
+    // Get Item By ItemId
     @GetMapping("/item/{itemId}")
     public InventoryDTO getItemById(@PathVariable Integer itemId) {
         return inventoryService.getItemById(itemId);

@@ -38,11 +38,32 @@
             <artifactId>modelmapper</artifactId>
             <version>3.2.0</version>
         </dependency>
+        <!-- Used for create Web Client communication. in Nodejs We use Axios but in spring boot we use webflux -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+            <version>3.3.2</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>3.3.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Get Inventory Project As Dependency to Order Project  -->
+        <dependency>
+            <groupId>org.RootLabs</groupId>
+            <artifactId>inventory</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!-- Get Product Project As Dependency to Order Project  -->
+        <dependency>
+            <groupId>org.RootLabs</groupId>
+            <artifactId>product</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
     </dependencies>
 </project>
