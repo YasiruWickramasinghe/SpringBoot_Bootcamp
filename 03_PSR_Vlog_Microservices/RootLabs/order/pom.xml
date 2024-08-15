@@ -58,5 +58,12 @@
             <artifactId>inventory</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <!-- Get Product Project As Dependency to Order Project  -->
+        <dependency>
+            <groupId>org.RootLabs</groupId>
+            <artifactId>product</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
     </dependencies>
 </project>
