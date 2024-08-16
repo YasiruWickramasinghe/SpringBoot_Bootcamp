@@ -38,11 +38,24 @@
             <artifactId>modelmapper</artifactId>
             <version>3.2.0</version>
         </dependency>
+        <!-- use apache kafka for asynchronous communication-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>3.3.2</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Asynchronous Communication using Kafka -->
+        <!-- Get Base Project As Dependency to Order Project  -->
+        <dependency>
+            <groupId>org.RootLabs</groupId>
+            <artifactId>base</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 </project>
