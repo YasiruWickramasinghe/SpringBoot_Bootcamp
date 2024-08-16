@@ -45,6 +45,11 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
             <version>3.3.2</version>
         </dependency>
+        <!-- use apache kafka for asynchronous communication-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -52,6 +57,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- synchronous Communication using WebClient  -->
         <!-- Get Inventory Project As Dependency to Order Project  -->
         <dependency>
             <groupId>org.RootLabs</groupId>
@@ -62,6 +68,14 @@
         <dependency>
             <groupId>org.RootLabs</groupId>
             <artifactId>product</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!-- Asynchronous Communication using Kafka -->
+        <!-- Get Base Project As Dependency to Order Project  -->
+        <dependency>
+            <groupId>org.RootLabs</groupId>
+            <artifactId>base</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
 
