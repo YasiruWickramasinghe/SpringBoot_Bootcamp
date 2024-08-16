@@ -49,5 +49,13 @@
             <version>3.3.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Asynchronous Communication using Kafka -->
+        <!-- Get Base Project As Dependency to Order Project  -->
+        <dependency>
+            <groupId>org.RootLabs</groupId>
+            <artifactId>base</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 </project>
