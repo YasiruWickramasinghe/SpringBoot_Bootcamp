@@ -84,7 +84,7 @@ To start Zookeeper, we can open a PowerShell prompt and execute the below comman
 .\bin\windows\kafka-topics.bat --bootstrap-server=localhost:9092 --list
 ```
 
-# 2) Microservice API Security = using KeyCloak - Auth 2.0
+# 2) Microservice API Security using KeyCloak - Auth 2.0
 
 #### Prerequisites java
 
@@ -120,6 +120,39 @@ bin\kc.bat start-dev
 localhost://8080
 ```
 #### Step 5:Create an Administrative User
+
+# 3) Service Monitor using actuator and prometheus 
+
+# Installing prometheus on Windows
+
+#### Step 1:Download the latest version of prometheus
+go the official website https://prometheus.io
+click downloads
+
+#### Step 2: run microservices and go to project and check prometheus.yml file
+assign current running ports to yml file
+example : localhost:58297
+
+#### Step 3:Extract the downloaded prometheus zip file to a directory of your choice.
+
+#### Step 4: go to downloaded directory and open new console and run below command
+```javascript prometheus
+.\prometheus --config.file=D:\PROGRAMMING\Code\SpringBoot_Bootcamp\03_PSR_Vlog_Microservices\RootLabs\prometheus\prometheus.yml
+```
+#### Step 5: go to new web browser tab
+localhost://9090
+
+# 3) Service Monitor using Grafana
+
+# Installing grafana on Windows
+
+#### Step 1: go to downloaded directory 
+go to https://grafana.com/oss/ and click grafana then select windows and download
+
+#### Step 2: Run Grafana
+https://localhost:9090
+
+
 
 # Key Topics
 
