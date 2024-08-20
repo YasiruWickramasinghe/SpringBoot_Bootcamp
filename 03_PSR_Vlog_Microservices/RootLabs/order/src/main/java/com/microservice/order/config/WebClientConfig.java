@@ -1,5 +1,6 @@
 package com.microservice.order.config;
 
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -9,19 +10,22 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class WebClientConfig {
 
     @Bean
-    public WebClient webClient() {
-        return WebClient.builder().build();
+    @LoadBalanced
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
     }
+
+    // Set Service Discovery With Load Balancer in Netflix Eureka
 
     // Inventory WebClient
     @Bean
     public WebClient inventoryWebClient(){
-        return WebClient.builder().baseUrl("http://localhost:8080/api/v1").build();
+        return webClientBuilder().baseUrl("http://inventory/api/v1").build();
     }
 
     // Product WebClient
     @Bean
     public WebClient productWebClient(){
-        return WebClient.builder().baseUrl("http://localhost:8082/api/v1").build();
+        return webClientBuilder().baseUrl("http://product/api/v1").build();
     }
 }
