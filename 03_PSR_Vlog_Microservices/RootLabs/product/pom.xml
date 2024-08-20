@@ -49,5 +49,13 @@
             <version>3.3.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Service Directory - Netflix Eureka -->
+        <!-- For Client Side -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
