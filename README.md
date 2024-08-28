@@ -1,6 +1,50 @@
+# Spring Boot Complete Bootcamp
+
+Here Include 4 projects
+
+## 1) Udemy Series
+        i) Spring boot Core Concepts
+        ii) Hibernate JPA CRUD
+        iii) Rest Crud API
+        iv) Rest API Security
+        v) Spring MVC
+        vi) Spring MVC CRUD
+        vii) Spring MVC Security
+
+## 2) PSR_Vlog Series
+        i) Rest API
+        ii) CRUD App
+    
+## 3) PSR_Vlog Microservice Series
+        i) Create Microservices
+        ii) Microservices Inter Communication - Synchronouse Communication
+        iii) Microservice Asyncronouse Communication using Apache Kafka
+        iv) Service Discovery With Netflix Eureka
+        v) API Gateway With Spring CLoud
+        ii) Microservice API Security using KeyCloak - Auth 2.0
+        iii) Service Monitor using actuator and prometheus
+
+## 4) Daily Code Buffer Series
+        i) Spring Aspect-Oriented-Programming (AOP)
+        ii) Spring Boot
+            1) Craete CRUD APP
+            2) Hibernate / Logger / Project Lombok / Exception Handling
+            3) Unit Testing
+            4) Actuiator
+        iii) Spring Data JPA
+            1) JPA Annotation
+            2) Query Example
+            3) Database Relation 
+        iv) Spring Security
+            1) Password / email send for activation user / resend token / reset password
+            2) login functionality / authentication / authorization
+
+
+## 3) PSR_Vlog Microservice Ser
+
 # 1) Microservice Asyncronouse Communication using Apache Kafka
 
-#### Prerequisites java 
+### Prerequisites java 
 
 ## Check Java Installed
 java -version
@@ -152,9 +196,7 @@ go to https://grafana.com/oss/ and click grafana then select windows and downloa
 #### Step 2: Run Grafana
 https://localhost:9090
 
-
-
-# Key Topics
+## 1) Udemy Series
 
 ## Spring Boot 3 & Spring Framework 6
 - Understand the core concepts and functionalities of these updated frameworks.
