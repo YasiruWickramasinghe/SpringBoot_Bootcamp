@@ -40,7 +40,7 @@ Here Include 4 projects
             2) login functionality / authentication / authorization
 
 
-## 3) PSR_Vlog Microservice Ser
+## 3) PSR_Vlog Microservice Series
 
 # 1) Microservice Asyncronouse Communication using Apache Kafka
 
