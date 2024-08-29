@@ -5,9 +5,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
+//Auto Generate getters, setters, constructor
+@Data
+//Auto Generate All Argument Constructor
+@AllArgsConstructor
+//Auto Generate Non Argument Constructor
+@NoArgsConstructor
 public class Department {
 
     @Id
@@ -54,6 +63,9 @@ public class Department {
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
+
+    // ******** No Need below Boiler Plates We Use PROJECT LOMBOK for automatically generate that Boiler plates ******
+    /*
 
     public Department() {
     }
@@ -106,4 +118,6 @@ public class Department {
                 ", departmentCode='" + departmentCode + '\'' +
                 '}';
     }
+
+    */
 }

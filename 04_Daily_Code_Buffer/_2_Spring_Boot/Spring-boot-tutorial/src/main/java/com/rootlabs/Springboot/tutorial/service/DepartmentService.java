@@ -1,6 +1,7 @@
 package com.rootlabs.Springboot.tutorial.service;
 
 import com.rootlabs.Springboot.tutorial.entity.Department;
+import com.rootlabs.Springboot.tutorial.error.DepartmentNotFoundException;
 
 import java.util.List;
 
@@ -13,7 +14,8 @@ public interface DepartmentService {
     public List<Department> fetchDepartmentList();
 
     //Get Department By Id
-    public Department fetchDepartmentById(Long departmentId);
+    //Throw Exception if Department Not Exist
+    public Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
     //Update Department By ID
     public Department updateDepartment(Long departmentId, Department department);

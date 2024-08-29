@@ -1,6 +1,7 @@
 package com.rootlabs.Springboot.tutorial.controller;
 
 import com.rootlabs.Springboot.tutorial.entity.Department;
+import com.rootlabs.Springboot.tutorial.error.DepartmentNotFoundException;
 import com.rootlabs.Springboot.tutorial.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -38,8 +39,9 @@ public class DepartmentController {
     }
 
     //Get Department By Id
+    //Throw Exception if Department Not Exist
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
 
