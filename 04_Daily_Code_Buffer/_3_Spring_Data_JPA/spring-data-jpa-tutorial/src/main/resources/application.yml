@@ -1,0 +1,25 @@
+# Change server running port
+server:
+  port: 8082
+
+spring:
+  application:
+    name: Spring-boot-tutorial
+
+  # MySQL Database Configuration
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/schooldb?createDatabaseIfNotExist=true
+
+  # JPA Configurations
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # Remove Banner from Console
+  main:
+    banner-mode: off
+
