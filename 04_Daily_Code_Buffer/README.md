@@ -1,21 +1,29 @@
 # Daily Code Buffer Series
 
-## i) Spring Aspect-Oriented-Programming (AOP)
+## Spring Aspect-Oriented-Programming (AOP)
 
-## ii) Spring Boot
+## Spring Boot
 
-    ### i) Craete CRUD APP
-    ### ii) Hibernate / Logger / Project Lombok / Exception Handling
-    ### iii) Unit Testing
-    ### iv) Actuiator
+### Craete CRUD APP
+### Hibernate / Logger / Project Lombok / Exception Handling
+### Unit Testing
+### Config Properties File  / Multiple spring profile / Actuator
 
-## iii) Spring Data JPA
+## Spring Data JPA
 
-    ### i) JPA Annotation
-    ### ii) Query Example
-    ### iii) Database Relation 
+## *** Class Diagram provided inside Folder called class_diagram ***
+## *** Here We didn't create Rest Api Simply Test Repository and database Using JUnit and Mokito ***
+## *** Run Test Cases to Check App ***
 
-## iv) Spring Security
+### Mapping Entities
+### JPA Annotation
+### JPA Relationship
+### Paging and Sorting
 
-    ### i) Password / email send for activation user / resend token / reset password
-    ### ii) login functionality / authentication / authorization
+## Spring Security
+
+### OAuth 2.0
+### Password / email send for activation user / resend token / reset password
+### login functionality / authentication / authorization
+### Spring Security config
+### Resource Server Creation

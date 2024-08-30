@@ -32,12 +32,21 @@ Here Include 4 projects
             3) Unit Testing
             4) Config Properties File  / Multiple spring profile / Actuator
         iii) Spring Data JPA
-            1) JPA Annotation
-            2) Query Example
-            3) Database Relation 
+
+            *** Class Diagram provided inside Folder called class_diagram ***
+            *** Here We didn't create Rest Api Simply Test Repository and database Using JUnit and Mokito ***
+            *** Run Test Cases to Check App ***
+
+            1) Mapping Entities
+            2) JPA Annotation
+            3) JPA Relationship
+            4) Paging and Sorting
         iv) Spring Security
-            1) Password / email send for activation user / resend token / reset password
-            2) login functionality / authentication / authorization
+            1) OAuth 2.0
+            2) Password / email send for activation user / resend token / reset password
+            3) login functionality / authentication / authorization
+            4) Spring Security config
+            5) Resource Server Creation
 
 ## 4) Daily Code Buffer Series
 
@@ -90,7 +99,11 @@ Here Include 4 projects
 #### iiI) Step - 3 - add plugin to pom.xml
     go to ide and check plugin section that lombok plugin installed
 
-### Exception Handling
+### Hibernate JPA Project
+
+    *** Class Diagram provided inside Folder called class_diagram ***
+    *** Here We didn't create Rest Api Simply Test Repository and database Using JUnit and Mokito ***
+    *** Run Test Cases to Check App ***
 
 
 
