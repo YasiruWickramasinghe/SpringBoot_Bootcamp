@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
@@ -13,10 +14,12 @@ import org.hibernate.validator.constraints.Length;
 @Entity
 //Auto Generate getters, setters, constructor
 @Data
-//Auto Generate All Argument Constructor
-@AllArgsConstructor
 //Auto Generate Non Argument Constructor
 @NoArgsConstructor
+//Auto Generate All Argument Constructor
+@AllArgsConstructor
+//Builder Pattern Automate
+@Builder
 public class Department {
 
     @Id
