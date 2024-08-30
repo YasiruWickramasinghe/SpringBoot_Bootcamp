@@ -1,0 +1,108 @@
+# Change server running port
+server:
+  port: 8082
+
+# Tell Spring which profile to run
+spring:
+  profiles:
+    active: prod
+
+# Using "---" to indicate a separate document
+---
+
+# This is for Development Profile
+spring:
+  application:
+    name: Spring-boot-tutorial
+
+  # Activate different profile based on environment like dev,qa,stage,production
+  config:
+    activate:
+      on-profile: dev
+
+  # MySQL Database Configuration
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dailyCodeBufferDb?createDatabaseIfNotExist=true
+
+  # JPA Configurations
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # Remove Banner from Console
+  main:
+    banner-mode: off
+
+# Example Message
+welcome:
+  message: Welcome RootLabs!!
+
+---
+
+# This is for Quality Assurance Profile
+spring:
+  application:
+    name: Spring-boot-tutorial
+
+  # Activate different profile based on environment like dev,qa,stage,production
+  config:
+    activate:
+      on-profile: qa
+
+  # MySQL Database Configuration
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dailyCodeBufferDb-qa?createDatabaseIfNotExist=true
+
+  # JPA Configurations
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # Remove Banner from Console
+  main:
+    banner-mode: off
+
+# Example Message
+welcome:
+  message: Welcome RootLabs!!
+
+---
+
+# This is for Production Profile
+spring:
+  application:
+    name: Spring-boot-tutorial
+
+  # Activate different profile based on environment like dev,qa,stage,production
+  config:
+    activate:
+      on-profile: prod
+
+  # MySQL Database Configuration
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dailyCodeBufferDb-prod?createDatabaseIfNotExist=true
+
+  # JPA Configurations
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # Remove Banner from Console
+  main:
+    banner-mode: off
+
+# Example Message
+welcome:
+  message: Welcome RootLabs!!

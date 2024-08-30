@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.rootlabs</groupId>
 	<artifactId>Spring-boot-tutorial</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>Spring-boot-tutorial</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>

@@ -30,7 +30,7 @@ Here Include 4 projects
             1) Craete CRUD APP
             2) Hibernate / Logger / Project Lombok / Exception Handling
             3) Unit Testing
-            4) Actuiator
+            4) Config Properties File  / Multiple spring profile / Actuator
         iii) Spring Data JPA
             1) JPA Annotation
             2) Query Example
