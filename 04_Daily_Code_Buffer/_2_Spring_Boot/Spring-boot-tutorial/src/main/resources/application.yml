@@ -5,7 +5,7 @@ server:
 # Tell Spring which profile to run
 spring:
   profiles:
-    active: prod
+    active: dev
 
 # Using "---" to indicate a separate document
 ---
@@ -40,6 +40,14 @@ spring:
 # Example Message
 welcome:
   message: Welcome RootLabs!!
+
+#Enable Actuator Features
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
 
 ---
 
