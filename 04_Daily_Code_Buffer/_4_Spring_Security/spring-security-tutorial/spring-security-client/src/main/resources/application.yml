@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8080
 
 spring:
   # Application Name
@@ -18,3 +18,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+
+# Remove Banner from Console
+  main:
+    banner-mode: off
