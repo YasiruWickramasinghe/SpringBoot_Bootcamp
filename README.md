@@ -42,8 +42,16 @@ Here Include 4 projects
             3) JPA Relationship
             4) Paging and Sorting
         iv) Spring Security
-            1) OAuth 2.0
-            2) Password / email send for activation user / resend token / reset password
+
+            *** Complete Registration and Login Reference
+                ****  https://www.baeldung.com/registration-with-spring-mvc-and-spring-security
+
+            *** Complete OAuth 2.0 Reference
+                ****  https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth
+                ****  https://www.oauth.com/playground/
+
+            1) User registration and Login / email send for verify user / resend token / reset password / change password
+            2) OAuth 2.0
             3) login functionality / authentication / authorization
             4) Spring Security config
             5) Resource Server Creation
