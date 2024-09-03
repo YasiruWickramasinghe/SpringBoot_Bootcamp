@@ -1,6 +1,7 @@
 package com.rootlabs.client.service;
 
 import com.rootlabs.client.entity.User;
+import com.rootlabs.client.entity.VerificationToken;
 import com.rootlabs.client.model.UserModel;
 
 public interface UserService {
@@ -9,4 +10,6 @@ public interface UserService {
     void saveVerificationTokenForUser(String token, User user);
 
     String validateVerificationToken(String token);
+
+    VerificationToken generateNewVerificationToken(String oldToken);
 }
