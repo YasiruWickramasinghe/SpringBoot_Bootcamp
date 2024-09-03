@@ -16,7 +16,8 @@ public class WebSecurityConfig {
     // Allowing this urls
     private static final String[] WHITE_LIST_URLS = {
             "/hello",
-            "/register"
+            "/register",
+            "/verifyRegistration"
     };
 
     // Password Encoder
