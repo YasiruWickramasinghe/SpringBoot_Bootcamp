@@ -17,6 +17,7 @@
 <!--    Add spring-security-client as module-->
     <modules>
         <module>spring-security-client</module>
+        <module>Oauth-authorization-server</module>
     </modules>
 
 </project>

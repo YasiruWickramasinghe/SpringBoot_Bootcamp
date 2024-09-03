@@ -29,8 +29,8 @@
 #### ****  https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth
 #### ****  https://www.oauth.com/playground/
 
-# User registration and Login / email send for verify user / resend token / reset password / change password
-# OAuth 2.0
+# Spring Security - User registration Flow / email send for verify user / resend token / reset password / change password
+# OAuth 2.0 - User Login
 # login functionality / authentication / authorization
 # Spring Security config
 # Resource Server Creation
