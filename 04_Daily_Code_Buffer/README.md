@@ -11,9 +11,9 @@
 
 ## Spring Data JPA
 
-## *** Class Diagram provided inside Folder called class_diagram ***
-## *** Here We didn't create Rest Api Simply Test Repository and database Using JUnit and Mokito ***
-## *** Run Test Cases to Check App ***
+### *** Class Diagram provided inside Folder called class_diagram ***
+### *** Here We didn't create Rest Api Simply Test Repository and database Using JUnit and Mokito ***
+### *** Run Test Cases to Check App ***
 
 ### Mapping Entities
 ### JPA Annotation
@@ -22,8 +22,15 @@
 
 ## Spring Security
 
-### OAuth 2.0
-### Password / email send for activation user / resend token / reset password
-### login functionality / authentication / authorization
-### Spring Security config
-### Resource Server Creation
+### *** Complete Registration and Login Reference
+#### ****  https://www.baeldung.com/registration-with-spring-mvc-and-spring-security
+
+### *** Complete OAuth 2.0 Reference
+#### ****  https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth
+#### ****  https://www.oauth.com/playground/
+
+# User registration and Login / email send for verify user / resend token / reset password / change password
+# OAuth 2.0
+# login functionality / authentication / authorization
+# Spring Security config
+# Resource Server Creation
