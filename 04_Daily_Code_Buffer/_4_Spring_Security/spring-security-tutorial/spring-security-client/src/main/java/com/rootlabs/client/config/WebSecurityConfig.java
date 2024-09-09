@@ -2,6 +2,7 @@ package com.rootlabs.client.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -38,10 +39,15 @@ public class WebSecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests((auth)-> auth
+                .authorizeHttpRequests((auth) -> auth
                         .requestMatchers(WHITE_LIST_URLS).permitAll()
-                        .anyRequest().authenticated()
-                );
+                        .requestMatchers("/api/**").authenticated()
+                )
+                .oauth2Login(oauth2login ->
+                        oauth2login.loginPage("/oauth2/authorization/api-client-oidc"))
+                .oauth2Client(Customizer.withDefaults());
+
         return http.build();
     }
+
 }
