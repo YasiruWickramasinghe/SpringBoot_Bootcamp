@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rootlabs</groupId>
-	<artifactId>spring-security-client</artifactId>
+	<artifactId>Oauth-authorization-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-security-client</name>
-	<description>Project for Spring Boot Security Client</description>
+	<name>Oauth-authorization-server</name>
+	<description>Project for Spring Boot with OAuth 2.0</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -36,6 +36,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
@@ -51,10 +55,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -64,16 +64,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-oauth2-client</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webflux</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.projectreactor.netty</groupId>
-			<artifactId>reactor-netty</artifactId>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-authorization-server</artifactId>
+			<version>0.2.2</version>
 		</dependency>
 
 	</dependencies>
