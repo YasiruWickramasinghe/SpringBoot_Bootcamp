@@ -1,6 +1,6 @@
 package com.rootlabs.user.VO;
 
-import com.rootlabs.user.entity.Users;
+import com.rootlabs.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ResponseTemplateVO {
 
-    private Users user;
+    private User user;
     private Department department;
 }

@@ -1,7 +1,7 @@
 package com.rootlabs.user.controller;
 
 import com.rootlabs.user.VO.ResponseTemplateVO;
-import com.rootlabs.user.entity.Users;
+import com.rootlabs.user.entity.User;
 import com.rootlabs.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/")
-    public Users saveUser(@RequestBody Users user){
+    public User saveUser(@RequestBody User user){
 
         log.info("inside saveUser of UserController");
         return userService.saveUser(user);
