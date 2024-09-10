@@ -1,0 +1,7 @@
+# Change Service Port
+server:
+  port: 9001
+
+# Remove Banner from Console
+main:
+  banner-mode: off
