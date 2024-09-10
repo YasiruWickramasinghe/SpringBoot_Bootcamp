@@ -21,8 +21,8 @@ Here Include 4 projects
         iii) Microservice Asyncronouse Communication using Apache Kafka
         iv) Service Discovery With Netflix Eureka
         v) API Gateway With Spring CLoud
-        ii) Microservice API Security using KeyCloak - Auth 2.0
-        iii) Service Monitor using actuator and prometheus
+        vi) Microservice API Security using KeyCloak - Auth 2.0
+        vii) Service Monitor using actuator and prometheus
 
 ## 4) Daily Code Buffer Series
         i) Spring Aspect-Oriented-Programming (AOP)
@@ -55,6 +55,16 @@ Here Include 4 projects
             3) login functionality / authentication / authorization
             4) Spring Security config
             5) Resource Server Creation
+
+## 5) Daily Code Buffer Microservice Series
+
+        i) Create Microservices
+        ii) Microservices Inter Communication
+        iii) Create Service Registry
+        iv) API Gateway
+        v) Hystrix Dashboard for Monitoring
+        vi) GitHub for Config Server
+        vii) ZipKin and Sleuth
 
 ## 4) Daily Code Buffer Series
 
