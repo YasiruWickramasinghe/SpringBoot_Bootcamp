@@ -1,0 +1,13 @@
+#Running port initialize
+server:
+  port: 8761
+
+# Eureka Server initialize
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+# Remove Banner from Console
+main:
+  banner-mode: off
