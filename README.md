@@ -66,6 +66,8 @@ Here Include 4 projects
         vi) GitHub for Config Server
         vii) ZipKin and Sleuth
 
+# Explanation of Series
+
 ## 4) Daily Code Buffer Series
 
 ### Hibernate Validation
