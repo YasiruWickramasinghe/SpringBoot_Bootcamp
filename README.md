@@ -106,7 +106,6 @@ The Department Microservice manages department-related data. It supports operati
 
 The User Service handles user data management and integrates with the Department Microservice. It supports user registration, updates, and communication with the Department Microservice. It is equipped with Resilience4j for circuit breaking to handle service unavailability gracefully.
 
-
 ## 4) Daily Code Buffer Series
 
 ### Hibernate Validation
