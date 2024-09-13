@@ -6,17 +6,28 @@ server:
 spring:
   application:
     name: USER-SERVICE
+  config:
+    import: configserver:http://localhost:9296
 
-# Eureka Client initialize
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
+# Synchronous communication via Resilience4j
+resilience4j:
+  circuitbreaker:
+    instances:
+      departmentService:
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        eventConsumerBufferSize: 10
 
-# Remove Banner from Console
-main:
-  banner-mode: off
+# Actuator management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, circuits
+  endpoint:
+    health:
+      show-details: always
