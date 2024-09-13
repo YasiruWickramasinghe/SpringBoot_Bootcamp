@@ -1,0 +1,14 @@
+# Eureka Client initialize
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+# Remove Banner from Console
+spring:
+  main:
+    banner-mode: off    

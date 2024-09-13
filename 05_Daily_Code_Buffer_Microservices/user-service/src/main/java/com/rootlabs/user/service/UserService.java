@@ -4,6 +4,7 @@ import com.rootlabs.user.VO.Department;
 import com.rootlabs.user.VO.ResponseTemplateVO;
 import com.rootlabs.user.entity.User;
 import com.rootlabs.user.repository.UserRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,8 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    // Name the circuit breaker and set up the fallback method
+    @CircuitBreaker(name = "departmentService", fallbackMethod = "getDepartmentFallback")
     public ResponseTemplateVO getUserWithDepartment(Long userId) {
 
         log.info("inside getUserWithDepartment of UserService");
@@ -38,4 +41,23 @@ public class UserService {
 
         return vo;
     }
+
+    // Fallback method if department service is unavailable
+    public ResponseTemplateVO getDepartmentFallback(Long userId, Throwable t) {
+        log.error("Department service is down, falling back", t);
+
+        ResponseTemplateVO vo = new ResponseTemplateVO();
+        User user = userRepository.findByUserId(userId);
+
+        Department fallbackDepartment = new Department();
+        fallbackDepartment.setDepartmentId(0L);
+        fallbackDepartment.setDepartmentName("Department service not available");
+        fallbackDepartment.setDepartmentAddress("N/A");
+
+        vo.setUser(user);
+        vo.setDepartment(fallbackDepartment);
+
+        return vo;
+    }
+
 }

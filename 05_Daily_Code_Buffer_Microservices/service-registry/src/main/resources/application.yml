@@ -9,5 +9,6 @@ eureka:
     fetch-registry: false
 
 # Remove Banner from Console
-main:
-  banner-mode: off
+spring:
+  main:
+    banner-mode: off
