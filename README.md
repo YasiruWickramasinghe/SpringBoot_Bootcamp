@@ -16,13 +16,14 @@ Here Include 4 projects
         ii) CRUD App
     
 ## 3) PSR_Vlog Microservice Series
-        i) Create Microservices
-        ii) Microservices Inter Communication - Synchronouse Communication
-        iii) Microservice Asyncronouse Communication using Apache Kafka
-        iv) Service Discovery With Netflix Eureka
-        v) API Gateway With Spring CLoud
-        vi) Microservice API Security using KeyCloak - Auth 2.0
-        vii) Service Monitor using actuator and prometheus
+        i)   Create Microservices
+        ii)  Microservices Synchronous Communication - WebClient
+        iii) Microservice Asyncronouse Communication - Apache Kafka
+        iv)  Service Discovery With Netflix Eureka
+        v)   API Gateway With Spring CLoud - Reactive Gateway
+        vi)  Circuit Breaker - Resilience4j
+        vii) Microservice API Security using KeyCloak - Auth 2.0
+        viii)Service Monitor - actuator, prometheus and grafana
 
 ## 4) Daily Code Buffer Series
         i) Spring Aspect-Oriented-Programming (AOP)
@@ -33,7 +34,7 @@ Here Include 4 projects
             4) Config Properties File  / Multiple spring profile / Actuator
         iii) Spring Data JPA
 
-            *** Class Diagram provided inside Folder called class_diagram ***
+            *** Class Diagram provided inside Folder called class_diagram ***[README.md](README.md)
             *** Here We didn't create Rest Api Simply Test Repository and database Using JUnit and Mokito ***
             *** Run Test Cases to Check App ***
 
@@ -58,13 +59,53 @@ Here Include 4 projects
 
 ## 5) Daily Code Buffer Microservice Series
 
-        i) Create Microservices
-        ii) Microservices Inter Communication
-        iii) Create Service Registry
-        iv) API Gateway
-        v) Hystrix Dashboard for Monitoring
-        vi) GitHub for Config Server
+        i)   Create Microservices
+        ii)  Microservices Synchronous Communication - RestTemplate
+        iii) Create Service Registry - Netflix Eureka
+        iv)  API Gateway - Spring cloud reactive gateway
+        v)   Circuit Breaker - Resilience4j
+        vi)  GitHub for Config Server
         vii) ZipKin and Sleuth
+
+## Detailed Explanation
+
+### 5) Daily Code Buffer Microservice Series
+
+How to Run
+
+* First Run -> service-registry
+* Second Run -> cloud-config-server
+* Third Run -> cloud-gateway
+* Fourth Run -> department-service
+* Fifth Run -> user-service
+
+ Introduction Microservices
+
+* 1) service-registry
+
+The Service Registry is a key component of our microservices architecture, utilizing Netflix Eureka for service discovery and registration. It enables microservices to find and communicate with each other dynamically, without needing hardcoded service locations
+
+* 2) git-config-server
+
+only a yml file contain global configuration
+The Git Config Server is responsible for fetching configuration properties from a Git repository. It pulls configuration data from a file named properties.yml in the repository, allowing centralized management of configuration properties used by various microservices
+
+* 3) cloud-config-server
+
+The Cloud Config Server integrates with the Git Config Server to provide a centralized configuration service for microservices. It serves the configuration data (e.g., from properties.yml) to the microservices at runtime, facilitating consistent configuration management across all services.
+
+* 4) cloud-gateway
+
+The Cloud Gateway acts as the entry point for all microservices, routing requests to the appropriate service. It provides a single, unified API endpoint for clients and includes features like routing, load balancing, and security.
+
+* 5) department-service
+
+The Department Microservice manages department-related data. It supports operations to add, update, and fetch department information, providing a RESTful API for interacting with department records.
+
+* 6) user-service
+
+The User Service handles user data management and integrates with the Department Microservice. It supports user registration, updates, and communication with the Department Microservice. It is equipped with Resilience4j for circuit breaking to handle service unavailability gracefully.
+
 
 ## 4) Daily Code Buffer Series
 
