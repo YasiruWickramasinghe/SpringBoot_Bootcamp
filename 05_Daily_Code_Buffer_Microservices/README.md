@@ -7,6 +7,15 @@
 * Third Run -> cloud-gateway
 * Fourth Run -> department-service
 * Fifth Run -> user-service
+* sixth -> start zipkin server
+``` run
+        download zipkin server -> https://zipkin.io/pages/quickstart.html -> java -> latest release
+        run the server using command
+        
+        in cmd type -> java -jar zipkin-server-3.0.4-exec.jar
+        
+        then you will see port number and rin that in localhost - http://127.0.0.1:9411/zipkin/
+ ```
 
 ## Introduction Microservices
 
@@ -34,3 +43,15 @@ The Department Microservice manages department-related data. It supports operati
 ### 6) user-service
 
 The User Service handles user data management and integrates with the Department Microservice. It supports user registration, updates, and communication with the Department Microservice. It is equipped with Resilience4j for circuit breaking to handle service unavailability gracefully.
+
+## Tool used in microservices
+
+* Service Registry - Netflix eureka - Manages service discovery and registration with Netflix Eureka.
+* Api Gateway - spring-cloud-routing gateway -Routes requests to microservices using Spring Cloud Gateway.
+* circuit breaker - resilience4j - Handles service failures and fallback logic with Resilience4j.
+* synchronous communication - RestTemplate - Facilitates direct communication between services using RestTemplate.
+* cloud configuration - config-server & spring-cloud-starter-config - Centralizes configuration management with Config Server and Spring Cloud Config.
+* Monitoring - Spring Actuator - Provides runtime metrics and health checks with Spring Actuator.
+* logging and tracing - zipkin and spring opentelemetry
+* Spring Cloud opentelemetry: Adds tracing to logs and propagates trace information across microservices.
+* Zipkin: Collects and visualizes tracing data to monitor and troubleshoot requests in distributed systems.
