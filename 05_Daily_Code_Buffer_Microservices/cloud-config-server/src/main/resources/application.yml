@@ -9,8 +9,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/YasiruWickramasinghe/SpringBoot_Microservice_Config_Server
+          uri: https://github.com/YasiruWickramasinghe/SpringBoot_Bootcamp
           clone-on-start: true
+          searchPaths:
+            - 05_Daily_Code_Buffer_Microservices/git-config-server
 
   # Remove Banner from Console
   main:
