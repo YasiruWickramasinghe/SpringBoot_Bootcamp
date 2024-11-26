@@ -9,7 +9,8 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import javax.sql.DataSource;
 
-@Configuration
+// no need this DataSourceConfig file if we manually create tables in database
+//@Configuration
 public class DataSourceConfig {
 
     @Autowired
@@ -19,9 +20,9 @@ public class DataSourceConfig {
     public  DataSourceInitializer dataSourceInitializer(){
         DataSourceInitializer initializer = new DataSourceInitializer();
         initializer.setDataSource(dataSource);
-        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-        populator.addScript(new ClassPathResource("schema.sql"));
-        initializer.setDatabasePopulator(populator);
+//        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
+//        populator.addScript(new ClassPathResource("schema.sql"));
+//        initializer.setDatabasePopulator(populator);
         return initializer;
     }
 }

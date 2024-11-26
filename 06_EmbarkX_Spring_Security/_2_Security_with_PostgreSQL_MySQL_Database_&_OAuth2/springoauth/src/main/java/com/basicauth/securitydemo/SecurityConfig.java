@@ -54,6 +54,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authorizeRequests ->
                 authorizeRequests.requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/signin").permitAll()
+                        .requestMatchers("/api/public/**").permitAll() // enable any endpoint with "/api/public/**" access publicly
                         .anyRequest().authenticated());
 
         //Remove Cookies and make Stateless API
@@ -86,23 +87,30 @@ public class SecurityConfig {
         return new JdbcUserDetailsManager(dataSource);
     }
 
+    // This Bean only Use for initially save data to database
+    // if database have any user data this bean can comment out
     @Bean
     public CommandLineRunner initData(UserDetailsService userDetailsService) {
         return args -> {
             JdbcUserDetailsManager manager = (JdbcUserDetailsManager) userDetailsService;
-            UserDetails user1 = User.withUsername("user1")
-                    .password(passwordEncoder().encode("password1"))
-                    .roles("USER")
-                    .build();
-            UserDetails admin = User.withUsername("admin")
-                    //.password(passwordEncoder().encode("adminPass"))
-                    .password(passwordEncoder().encode("adminPass"))
-                    .roles("ADMIN")
-                    .build();
-
             JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
-            userDetailsManager.createUser(user1);
-            userDetailsManager.createUser(admin);
+
+            if (!manager.userExists("user1")) {
+                UserDetails user1 = User.withUsername("user1")
+                        .password(passwordEncoder().encode("password1"))
+                        .roles("USER")
+                        .build();
+                userDetailsManager.createUser(user1);
+            }
+
+            if (!manager.userExists("admin")) {
+                UserDetails admin = User.withUsername("admin")
+                        //.password(passwordEncoder().encode("adminPass"))
+                        .password(passwordEncoder().encode("adminPass"))
+                        .roles("ADMIN")
+                        .build();
+                userDetailsManager.createUser(admin);
+            }
         };
     }
 
