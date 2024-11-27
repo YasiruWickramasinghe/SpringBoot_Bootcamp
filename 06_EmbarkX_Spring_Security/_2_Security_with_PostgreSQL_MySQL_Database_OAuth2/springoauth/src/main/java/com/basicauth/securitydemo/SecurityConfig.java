@@ -74,10 +74,12 @@ public class SecurityConfig {
                         .sameOrigin()
                 )
         );
+
         http.csrf(csrf -> csrf.disable());
         http.addFilterBefore(authenticationJwtTokenFilter(),
                 UsernamePasswordAuthenticationFilter.class);
 
+        http.cors(withDefaults());
 
         return http.build();
     }
