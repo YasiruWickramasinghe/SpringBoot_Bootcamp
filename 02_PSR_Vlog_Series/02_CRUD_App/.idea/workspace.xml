@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="170b603f-5027-4c79-b53c-cb3a0848a6dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../04_Daily_Code_Buffer/_2_Spring_Boot/Spring-boot-tutorial/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_Daily_Code_Buffer/_2_Spring_Boot/Spring-boot-tutorial/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_Daily_Code_Buffer/_1_Spring_AOP/spring-aop-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_Daily_Code_Buffer/_1_Spring_AOP/spring-aop-demo/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,23 +42,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.DemoApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;series/daily__code__buffer&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PROGRAMMING/Code/Spring_Boot/SpringBoot_Bootcamp/02_PSR_Vlog_Series/02_CRUD_App&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DemoApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "series/embarkx__spring__security",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/PROGRAMMING/Code/Spring_Boot/AuthenticationApp/userManageApp"
   }
-}</component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

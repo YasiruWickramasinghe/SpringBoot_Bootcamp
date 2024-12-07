@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+// Implements AuthEntryPointJwt to handle unauthorized requests and return meaningful error responses (with JSON).
+
 @Component
 public class AuthEntryPointJwt implements AuthenticationEntryPoint {
 

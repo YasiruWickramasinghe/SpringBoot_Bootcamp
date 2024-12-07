@@ -36,9 +36,9 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "series/daily__code__buffer",
+    "git-widget-placeholder": "series/embarkx__spring__security",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/PROGRAMMING/Code/Design Pattern/Design_Pattern_Bootcamp"
+    "last_opened_file_path": "D:/PROGRAMMING/Code/Spring_Boot/SpringBoot_Bootcamp/04_Daily_Code_Buffer/_1_Spring_AOP/spring-aop-demo"
   }
 }]]></component>
   <component name="RunManager">
@@ -60,13 +60,6 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
