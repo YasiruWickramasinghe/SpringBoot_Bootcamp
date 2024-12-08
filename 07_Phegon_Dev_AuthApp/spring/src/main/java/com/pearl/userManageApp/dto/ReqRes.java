@@ -2,7 +2,7 @@ package com.pearl.userManageApp.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.pearl.userManageApp.entity.UserEntity;
+import com.pearl.userManageApp.entity.UsersEntity;
 import lombok.Data;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class ReqRes {
     private String password;
     private String city;
     private String role;
-    private UserEntity userEntity;
+    private UsersEntity usersEntity;
     private String userList;
-    private List<UserEntity> userEntityList;
+    private List<UsersEntity> usersEntityList;
 }

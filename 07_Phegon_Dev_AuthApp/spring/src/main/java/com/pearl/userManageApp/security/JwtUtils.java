@@ -20,11 +20,18 @@ public class JwtUtils {
     private SecretKey Key;
     private static final Long EXPIRATION_TIME = 86400000L; //24 hours
 
-    public JwtUtils(){
+//    public JwtUtils(){
+//        String secretString = "54873213232116787565dgf5h8yj51bdf";
+//        byte[] keyBytes = Base64.getDecoder().decode(secretString.getBytes(StandardCharsets.UTF_8));
+//        this.Key = new SecretKeySpec(keyBytes, "HmacSHA256");
+//    }
+
+    public JwtUtils() {
         String secretString = "54873213232116787565dgf5h8yj51bdf8y7ok8tu4g1nj6ring1r578d7ssf";
-        byte[] keyBytes = Base64.getDecoder().decode(secretString.getBytes(StandardCharsets.UTF_8));
-        this.Key = new SecretKeySpec(keyBytes, "HmacSHA256");
+        byte[] keyBytes = secretString.getBytes(StandardCharsets.UTF_8); // Directly convert to bytes
+        this.Key = new SecretKeySpec(keyBytes, "HmacSHA256"); // Create the SecretKeySpec using HMACSHA256
     }
+
 
     // Generate JWT Token from Username
     public String generateToken(UserDetails userDetails){
