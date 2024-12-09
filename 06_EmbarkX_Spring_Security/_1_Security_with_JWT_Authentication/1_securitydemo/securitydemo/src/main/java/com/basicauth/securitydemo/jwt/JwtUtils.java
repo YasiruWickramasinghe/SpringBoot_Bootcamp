@@ -22,9 +22,13 @@ public class JwtUtils {
     @Value("${spring.app.jwtSecret}")
     private String jwtSecret;
 
-    // Set expiration time -> include inside application.properties file
+    // Set expiration time for access token -> include inside application.properties file
     @Value("${spring.app.jwtExpirationMs}")
     private int jwtExpirationMs;
+
+    // Set expiration time for refresh token -> include inside application.properties file
+    @Value("${spring.app.refreshTokenExpirationMs}")
+    private int refreshTokenExpirationMs;
 
     //Extracting the JWT token from the request Header
     public String getJwtFromHeader(HttpServletRequest request) {
@@ -36,8 +40,8 @@ public class JwtUtils {
         return null;
     }
 
-    // generate the token from username
-    public String generateTokenFromUsername(UserDetails userDetails) {
+    // Generate Access Token Using Username
+    public String generateAccessToken(UserDetails userDetails) {
         String username = userDetails.getUsername();
         return Jwts.builder()
                 .subject(username)
@@ -47,7 +51,18 @@ public class JwtUtils {
                 .compact();
     }
 
-    //Get the UserName from JWt Token - decode the payload
+    // Generate Refresh Token Using Username
+    public String generateRefreshToken(UserDetails userDetails) {
+        String username = userDetails.getUsername();
+        return Jwts.builder()
+                .subject(username)
+                .issuedAt(new Date())
+                .expiration(new Date((new Date()).getTime() + refreshTokenExpirationMs))
+                .signWith(key())
+                .compact();
+    }
+
+    // Extract Username from JWT Token - decode the payload
     public String getUserNameFromJwtToken(String token) {
         return Jwts.parser()
                 .verifyWith((SecretKey) key())
@@ -63,7 +78,6 @@ public class JwtUtils {
     //Validate the JWT Token
     public boolean validateJwtToken(String authToken) {
         try {
-            System.out.println("Validate");
             Jwts.parser().verifyWith((SecretKey) key()).build().parseSignedClaims(authToken);
             return true;
         } catch (MalformedJwtException e) {
