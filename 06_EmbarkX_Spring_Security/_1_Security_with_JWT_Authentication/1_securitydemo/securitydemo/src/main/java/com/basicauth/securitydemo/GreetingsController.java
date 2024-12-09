@@ -13,6 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,9 @@ public class GreetingsController {
     private JwtUtils jwtUtils;
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
 
     @GetMapping("/hello")
     public String sayHello(){
@@ -68,14 +72,51 @@ public class GreetingsController {
 
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
-        String jwtToken = jwtUtils.generateTokenFromUsername(userDetails);
+        String accessToken = jwtUtils.generateAccessToken(userDetails);
+        String refreshToken = jwtUtils.generateRefreshToken(userDetails);
 
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-        LoginResponse response = new LoginResponse(userDetails.getUsername(), roles, jwtToken);
+        LoginResponse response = new LoginResponse(userDetails.getUsername(), roles, accessToken, refreshToken);
 
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping("/refresh-token")
+    public ResponseEntity<?> refreshToken(@RequestBody Map<String, String> request) {
+        String refreshToken = request.get("refreshToken");
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            if (jwtUtils.validateJwtToken(refreshToken)) {
+                String username = jwtUtils.getUserNameFromJwtToken(refreshToken);
+
+                // Validate against database (optional, for extra security)
+                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+
+                if (userDetails != null) {
+                    // Generate new access token
+                    String newAccessToken = jwtUtils.generateAccessToken(userDetails);
+
+                    response.put("statusCode", 200);
+                    response.put("accessToken", newAccessToken);
+                    response.put("refreshToken", refreshToken);
+                    response.put("message", "Successfully refreshed token!");
+                    return ResponseEntity.ok(response);
+                }
+            }
+
+            response.put("statusCode", 401);
+            response.put("message", "Invalid or expired refresh token.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+
+        } catch (Exception e) {
+            response.put("statusCode", 500);
+            response.put("message", "An error occurred while refreshing the token: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+
 }
