@@ -15,12 +15,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-// Implements AuthEntryPointJwt to handle unauthorized requests and return meaningful error responses (with JSON).
+// Implements JwtAuthEntryPoint to handle unauthorized requests and return meaningful error responses (with JSON).
 
 @Component
-public class AuthEntryPointJwt implements AuthenticationEntryPoint {
+public class JwtAuthEntryPoint implements AuthenticationEntryPoint {
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthEntryPointJwt.class);
+    private static final Logger logger = LoggerFactory.getLogger(JwtAuthEntryPoint.class);
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
